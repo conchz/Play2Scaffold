@@ -1,1 +1,1 @@
-# playframework-scaffold
+# Play2Scaffold
