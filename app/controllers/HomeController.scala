@@ -1,6 +1,6 @@
 package controllers
 
-import javax.inject.Inject
+import javax.inject.{ Inject, Singleton }
 
 import commons.Logging
 import play.api.cache._
@@ -13,9 +13,10 @@ import scala.concurrent.duration._
  * When controllers are objects, a compilation error occurred: type Application is not a member of package controllers;
  * How to fix it: http://stackoverflow.com/questions/30543960/play-framework-for-scala-compilation-errortype-application-is-not-a-member-of
  */
-class Application @Inject() (val cache: CacheApi) extends Controller with Logging {
+@Singleton
+class HomeController @Inject() (val cache: CacheApi) extends Controller with Logging {
 
-  val cacheDuration: FiniteDuration = 1.day
+  implicit val cacheDuration: FiniteDuration = 1.day
 
   /**
    * Retrieves all routes via reflection.
