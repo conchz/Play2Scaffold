@@ -2,7 +2,7 @@ organization in ThisBuild := "org.lavenderx"
 name in ThisBuild := "Play2Scaffold"
 version := "1.0"
 
-lazy val root = (project in file("."))
+lazy val Play2Scaffold = (project in file("."))
   .enablePlugins(PlayScala, JavaAppPackaging)
 
 scalaVersion := "2.11.8"
